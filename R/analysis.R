@@ -75,7 +75,7 @@ ggplot(town.data,
           axis.text = element_blank(),
           axis.ticks = element_blank(),
           legend.position = "right")
-ggsave("ecsDiff.png", width = 8, height = 5, unit = "in", dpi = 300)
+ggsave("figures/ecsDiff.png", width = 8, height = 5, unit = "in", dpi = 300)
 
 #plot percetage of fy15 ecs vs adjusted fy15 ecs
 ggplot(town.data,
@@ -100,4 +100,4 @@ ggplot(town.data,
           axis.text = element_blank(),
           axis.ticks = element_blank(),
           legend.position = "right")
-ggsave("ecsPctDiff.png", width = 8, height = 5, unit = "in", dpi = 300)
+ggsave("figures/ecsPctDiff.png", width = 8, height = 5, unit = "in", dpi = 300)
