@@ -118,6 +118,7 @@ ggsave("figures/appropsFRPL.png", width = 8, height = 5, unit = "in", dpi = 300)
 # ecs target vs. fy16
 ggplot(ecs_data, aes(x = frpl_pct, diff_fy16_gov, label = town_name,
                      size = resTotal, color = alliance_status))+
+  geom_hline(yintercept = 0) +
   geom_text() + 
   scale_color_manual(values = c("indianred", "lightsteelblue4"),
                      name = "Alliance Status") +
@@ -128,7 +129,7 @@ ggplot(ecs_data, aes(x = frpl_pct, diff_fy16_gov, label = town_name,
   theme(legend.position = c(.2, .8))
 ggsave("figures/ecsFRPLdollar.png", width = 8, height = 5, unit = "in", dpi = 300)
 
-ggplot(ecs_data, aes(x = frpl_pct, diff_fy16_approps, label = town_name.x,
+ggplot(ecs_data, aes(x = frpl_pct, diff_fy16_approps, label = town_name,
                      size = resTotal, color = alliance_status))+
   geom_text() + 
   scale_color_manual(values = c("indianred", "lightsteelblue4"),
@@ -189,6 +190,7 @@ proposed_fix <- unaffected_towns %>%
 # plot fix ####
 ggplot(proposed_fix, aes(x = frpl_pct, proposed_ratio, label = town_name,
                      size = resTotal, color = alliance_status))+
+  geom_hline(yintercept = 1) +
   geom_text() + 
   scale_color_manual(values = c("indianred", "lightsteelblue4"),
                      name = "Alliance Status") +
@@ -201,6 +203,7 @@ ggsave("figures/proposedECS.png", width = 8, height = 5, unit = "in", dpi = 300)
 
 ggplot(proposed_fix, aes(x = frpl_pct, proposed_gap, label = town_name,
                          size = resTotal, color = alliance_status))+
+  geom_hline(yintercept = 0) +
   geom_text() + 
   scale_color_manual(values = c("indianred", "lightsteelblue4"),
                      name = "Alliance Status") +
@@ -240,6 +243,7 @@ bonus_fix <- bonus_towns %>%
 # plot bonus fix ####
 ggplot(bonus_fix, aes(x = frpl_pct, bonus_gap, label = town_name,
                          size = resTotal, color = alliance_status))+
+  geom_hline(yintercept = 0) +
   geom_text() + 
   scale_color_manual(values = c("indianred", "lightsteelblue4"),
                      name = "Alliance Status") +
@@ -252,6 +256,7 @@ ggsave("figures/proposedbonusECSdollars.png", width = 8, height = 5, unit = "in"
 
 ggplot(bonus_fix, aes(x = frpl_pct, bonus_pct, label = town_name,
                       size = resTotal, color = alliance_status))+
+  geom_hline(yintercept = 1) +
   geom_text() + 
   scale_color_manual(values = c("indianred", "lightsteelblue4"),
                      name = "Alliance Status") +
