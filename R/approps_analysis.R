@@ -168,7 +168,7 @@ underfunded_towns <- ecs_data %>%
          gap_amount = ratio_factor * gov_adj_target,
          proposed_fy16 = gov_adj_target * .75)
 
-# calculate the total amount of overfunding & average FRPL rate
+# calculate the total amount of underfunding & average FRPL rate
 underfunded_summary <- underfunded_towns %>%
   summarise(count = n(),
             total = sum(diff_fy16_gov),
