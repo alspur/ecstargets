@@ -113,3 +113,19 @@ ggplot(ecs_data, aes(x = fully_funded_target - ecs_fy16, final_v_gov_fy17, label
   labs(x = "Gap between current ECS grant and ECS Grant Target", y = "Increase in ECS Grant by FY17") +
   theme(legend.position = c(.2, .8))
 ggsave("figures/finalBudgetDollarChange.png", width = 8, height = 5, unit = "in", dpi = 300)
+
+# plot histogram of pct funded by fy17
+
+ggplot(ecs_data, aes(x = funded_pct_fy17))+
+  geom_histogram(binwidth = .1, fill = "indianred")+
+  labs(x = "% of Target ECS Grant by FY17", y = "Number of Towns")+
+  scale_x_continuous(label = percent)
+ggsave("figures/finalBudgetFY17fundedPct.png", width = 8, height = 5, unit = "in", dpi = 300)
+
+
+# previous chart w/ log10 x axis
+ggplot(ecs_data, aes(x = funded_pct_fy17))+
+  geom_histogram(binwidth = .1, fill = "indianred")+
+  labs(x = "% of Target ECS Grant by FY17", y = "Number of Towns")+
+  scale_x_log10(label = percent)
+ggsave("figures/finalBudgetFY17fundedPctLog.png", width = 8, height = 5, unit = "in", dpi = 300)
